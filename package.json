@@ -28,8 +28,7 @@
     "openapi-spec": "node ./dist/openapi-spec",
     "prestart": "npm run build",
     "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
-    "start": "node server.js",
-    "startx": "node -r source-map-support/register .",
+    "start": "node -r source-map-support/register .",
     "postinstall": "lb-tsc"
   },
   "repository": {
