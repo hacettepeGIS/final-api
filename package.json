@@ -8,9 +8,6 @@
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "engines": {
-    "node": ">=10"
-  },
   "scripts": {
     "build": "lb-tsc",
     "build:watch": "lb-tsc --watch",
@@ -30,8 +27,10 @@
     "migrate": "node ./dist/migrate",
     "openapi-spec": "node ./dist/openapi-spec",
     "prestart": "npm run build",
-    "start": "node -r source-map-support/register .",
-    "clean": "lb-clean dist *.tsbuildinfo .eslintcache"
+    "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
+    "start": "node server.js",
+    "startx": "node -r source-map-support/register .",
+    "postinstall": "lb-tsc"
   },
   "repository": {
     "type": "git"
@@ -46,6 +45,7 @@
   ],
   "dependencies": {
     "@loopback/boot": "^2.3.2",
+    "@loopback/build": "^5.4.2",
     "@loopback/context": "^3.8.2",
     "@loopback/core": "^2.7.1",
     "@loopback/openapi-v3": "^3.4.2",
@@ -53,15 +53,24 @@
     "@loopback/rest": "^5.1.0",
     "@loopback/rest-explorer": "^2.2.3",
     "@loopback/service-proxy": "^2.3.1",
-    "tslib": "^2.0.0"
+    "@loopback/testlab": "^3.1.6",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "tslib": "^2.0.0",
+    "typescript": "~3.9.3"
   },
   "devDependencies": {
     "@loopback/build": "^5.4.2",
-    "source-map-support": "^0.5.19",
+    "@loopback/eslint-config": "^8.0.0",
     "@loopback/testlab": "^3.1.6",
     "@types/node": "^10.17.24",
-    "@loopback/eslint-config": "^8.0.0",
+    "enhanced-resolve": "^3.3.0",
     "eslint": "^7.1.0",
+    "source-map-support": "^0.5.19",
     "typescript": "~3.9.3"
+  },
+  "engine": {
+    "node": ">=10.19.0",
+    "npm": ">=6.14.4"
   }
 }
