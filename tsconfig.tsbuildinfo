@@ -1687,7 +1687,7 @@
         "affectsGlobalScope": false
       },
       "./src/index.ts": {
-        "version": "db0d73b987a1ae9f593f3e3f88d4dc18585efdfc8a21ac6f8a13f24ca93bf6dd",
+        "version": "c7e817a517b903ac5b9f778bae02f5338aa1a0de5e6aa859a7bbf1d801033813",
         "signature": "6736014c6b1e811e1b33d70194f8a97545de232bd8a48ff40c49dbe6fb2d425c",
         "affectsGlobalScope": false
       },
@@ -1811,14 +1811,44 @@
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
+      "./src/controllers/activity.controller.ts": {
+        "version": "024e3edaefc346ef3da558baa170bee6524fdde2914601f2371d4a954b952812",
+        "signature": "7ae111a40d4bdb01719d9bb883d2751b251d38c1c685189236428f6ec7a5d086",
+        "affectsGlobalScope": false
+      },
       "./src/controllers/ping.controller.ts": {
         "version": "345e766a5a8233c79f1c11b09cfcd1b635bc462ace7ae1ce6b84b3fd8078384d",
         "signature": "80e3e158fbbb22cab068c3f91ec262086822f90ca629e02984060b8caf571993",
         "affectsGlobalScope": false
       },
       "./src/controllers/index.ts": {
-        "version": "fc1c62a010b4b620687414cfee2cd8c79c31ba5de4a0467a78f6189d8b4728f5",
-        "signature": "fc1c62a010b4b620687414cfee2cd8c79c31ba5de4a0467a78f6189d8b4728f5",
+        "version": "26f9b513249e641728554707ff4626b0807f8b8a449e6bf9adfbe7066cba3f8b",
+        "signature": "26f9b513249e641728554707ff4626b0807f8b8a449e6bf9adfbe7066cba3f8b",
+        "affectsGlobalScope": false
+      },
+      "./src/datasources/herokudb.datasource.ts": {
+        "version": "e2611ab1ae4269f33259f1b31876d35d02f837149cf9c5e4466a2d2d0ca2f790",
+        "signature": "f70423f2bc56a9ce4cd8aaf273e6bb36c396712dbec303a191a77e995b42f898",
+        "affectsGlobalScope": false
+      },
+      "./src/datasources/index.ts": {
+        "version": "6189be211aeeb51e3b50bbe404cc050718bac28360afe439d341c5f065a10337",
+        "signature": "6189be211aeeb51e3b50bbe404cc050718bac28360afe439d341c5f065a10337",
+        "affectsGlobalScope": false
+      },
+      "./src/models/activity-types.model.ts": {
+        "version": "1f6721895b970755c669a55e6cfb07a05fecd3bfda970ff3b434ff5aa9f5cde4",
+        "signature": "2b6a697a827febfb60ddd301896b8c90bc7a5d3ac19da0e70e14d7c32df82175",
+        "affectsGlobalScope": false
+      },
+      "./src/models/activity.model.ts": {
+        "version": "9e062d6f993896867a58791de59022fa5c4dd1390403ceed6a8f28bacc58c595",
+        "signature": "eb0aeefb3509ccd5a11d2818963ffc533e6879e552171d8eed7825c420e8e8af",
+        "affectsGlobalScope": false
+      },
+      "./src/models/index.ts": {
+        "version": "3cca639ecc55b43e89dbe2e359ec8aeb361b9bd6603cab321e6e263611eed5c1",
+        "signature": "3cca639ecc55b43e89dbe2e359ec8aeb361b9bd6603cab321e6e263611eed5c1",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/color-name/index.d.ts": {
@@ -4312,9 +4342,14 @@
         "./node_modules/@types/node/util.d.ts",
         "./src/sequence.ts"
       ],
+      "./src/controllers/activity.controller.ts": [
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
       "./src/controllers/index.ts": [
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
+        "./src/controllers/activity.controller.ts",
         "./src/controllers/ping.controller.ts"
       ],
       "./src/controllers/ping.controller.ts": [
@@ -4322,6 +4357,17 @@
         "./node_modules/@loopback/rest/dist/index.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
+      ],
+      "./src/datasources/herokudb.datasource.ts": [
+        "./node_modules/@loopback/core/dist/index.d.ts",
+        "./node_modules/@loopback/repository/dist/index.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./src/datasources/index.ts": [
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./src/datasources/herokudb.datasource.ts"
       ],
       "./src/index.ts": [
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -4332,6 +4378,23 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./src/application.ts"
+      ],
+      "./src/models/activity-types.model.ts": [
+        "./node_modules/@loopback/repository/dist/index.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./src/models/activity.model.ts": [
+        "./node_modules/@loopback/repository/dist/index.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./src/models/activity-types.model.ts"
+      ],
+      "./src/models/index.ts": [
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./src/models/activity-types.model.ts",
+        "./src/models/activity.model.ts"
       ],
       "./src/openapi-spec.ts": [
         "./node_modules/@loopback/core/dist/index.d.ts",
@@ -6753,13 +6816,31 @@
         "./node_modules/loopback-datasource-juggler/index.d.ts"
       ],
       "./src/controllers/index.ts": [
+        "./src/controllers/activity.controller.ts",
         "./src/controllers/ping.controller.ts"
       ],
       "./src/controllers/ping.controller.ts": [
         "./node_modules/@loopback/rest/dist/index.d.ts"
       ],
+      "./src/datasources/herokudb.datasource.ts": [
+        "./node_modules/@loopback/core/dist/index.d.ts",
+        "./node_modules/@loopback/repository/dist/index.d.ts"
+      ],
+      "./src/datasources/index.ts": [
+        "./src/datasources/herokudb.datasource.ts"
+      ],
       "./src/index.ts": [
         "./src/application.ts"
+      ],
+      "./src/models/activity-types.model.ts": [
+        "./node_modules/@loopback/repository/dist/index.d.ts"
+      ],
+      "./src/models/activity.model.ts": [
+        "./node_modules/@loopback/repository/dist/index.d.ts"
+      ],
+      "./src/models/index.ts": [
+        "./src/models/activity-types.model.ts",
+        "./src/models/activity.model.ts"
       ],
       "./src/sequence.ts": [
         "./node_modules/@loopback/rest/dist/index.d.ts"
@@ -7132,10 +7213,16 @@
       "./src/__tests__/acceptance/ping.controller.acceptance.ts",
       "./src/__tests__/acceptance/test-helper.ts",
       "./src/application.ts",
+      "./src/controllers/activity.controller.ts",
       "./src/controllers/index.ts",
       "./src/controllers/ping.controller.ts",
+      "./src/datasources/herokudb.datasource.ts",
+      "./src/datasources/index.ts",
       "./src/index.ts",
       "./src/migrate.ts",
+      "./src/models/activity-types.model.ts",
+      "./src/models/activity.model.ts",
+      "./src/models/index.ts",
       "./src/openapi-spec.ts",
       "./src/sequence.ts"
     ]

@@ -7,6 +7,7 @@ const application_1 = require("./application");
 tslib_1.__exportStar(require("./application"), exports);
 async function main(options = {}) {
     const app = new application_1.GisApiApplication(options);
+    await app.migrateSchema();
     await app.boot();
     await app.start();
     const url = app.restServer.url;
