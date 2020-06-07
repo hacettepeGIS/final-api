@@ -3,14 +3,16 @@ import {ApplicationConfig, GisApiApplication} from './application';
 export * from './application';
 
 export async function main(options: ApplicationConfig = {}) {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
   const app = new GisApiApplication(options);
-  await app.migrateSchema();
   await app.boot();
   await app.start();
 
   const url = app.restServer.url;
   console.log(`Server is running at ${url}`);
   console.log(`Try ${url}/ping`);
+
 
   return app;
 }

@@ -12,7 +12,8 @@ const config = {
     port: 5432,
     user: 'jfzzhlegrkqydc',
     password: 'cb7c8706c2ced94161429ca3caf5af4c1ab79543f14af695274527a96b8dc710',
-    database: 'd7095vhe5p2hep'
+    database: 'd7095vhe5p2hep',
+    ssl: true
 };
 // Observe application's life cycle to disconnect the datasource when
 // application is stopped. This allows the application to be shut down

@@ -11,6 +11,7 @@ export declare class HerokudbDataSource extends juggler.DataSource implements Li
         user: string;
         password: string;
         database: string;
+        ssl: boolean;
     };
     constructor(dsConfig?: object);
 }

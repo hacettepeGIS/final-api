@@ -6,8 +6,8 @@ const tslib_1 = require("tslib");
 const application_1 = require("./application");
 tslib_1.__exportStar(require("./application"), exports);
 async function main(options = {}) {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
     const app = new application_1.GisApiApplication(options);
-    await app.migrateSchema();
     await app.boot();
     await app.start();
     const url = app.restServer.url;
