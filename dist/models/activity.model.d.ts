@@ -1,14 +1,18 @@
 /// <reference types="node" />
 import { Entity } from '@loopback/repository';
+import { Geometry } from "geojson";
 export declare class Activity extends Entity {
     id?: number;
-    username: string;
+    ip: string;
+    name?: string;
     activityTypeId: number;
-    location: object;
+    geomerty: Geometry;
     time: string;
     photo?: Buffer;
     [prop: string]: any;
     constructor(data?: Partial<Activity>);
+    to(geojson: Geometry): string;
+    from(wkb: any): {};
 }
 export interface ActivityRelations {
 }

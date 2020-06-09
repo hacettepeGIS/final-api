@@ -3,10 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Activity = void 0;
 const tslib_1 = require("tslib");
 const repository_1 = require("@loopback/repository");
-const activity_types_model_1 = require("./activity-types.model");
+const wkx = tslib_1.__importStar(require("wkx"));
 let Activity = class Activity extends repository_1.Entity {
     constructor(data) {
         super(data);
+    }
+    to(geojson) {
+        return wkx.Geometry.parseGeoJSON(geojson).toWkt();
+    }
+    from(wkb) {
+        return wkx.Geometry.parse(new Buffer(wkb, "hex")).toGeoJSON();
     }
 };
 tslib_1.__decorate([
@@ -23,21 +29,27 @@ tslib_1.__decorate([
         required: true,
     }),
     tslib_1.__metadata("design:type", String)
-], Activity.prototype, "username", void 0);
+], Activity.prototype, "ip", void 0);
 tslib_1.__decorate([
     repository_1.property({
-        type: activity_types_model_1.ActivityTypes,
+        type: 'string',
+    }),
+    tslib_1.__metadata("design:type", String)
+], Activity.prototype, "name", void 0);
+tslib_1.__decorate([
+    repository_1.property({
+        type: 'number',
         required: true,
     }),
     tslib_1.__metadata("design:type", Number)
 ], Activity.prototype, "activityTypeId", void 0);
 tslib_1.__decorate([
     repository_1.property({
-        type: 'jsonb',
+        type: 'object',
         required: true,
     }),
     tslib_1.__metadata("design:type", Object)
-], Activity.prototype, "location", void 0);
+], Activity.prototype, "geomerty", void 0);
 tslib_1.__decorate([
     repository_1.property({
         type: 'date',

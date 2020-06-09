@@ -5,7 +5,7 @@ import { GeoJSON } from 'leaflet';
 export declare class ActivityController {
     activityRepository: ActivityRepository;
     constructor(activityRepository: ActivityRepository);
-    create(activity: GeoJSON): Promise<GeoJSON>;
+    create(activity: GeoJSON): Promise<Activity>;
     count(where?: Where<Activity>): Promise<Count>;
     find(filter?: Filter<Activity>): Promise<Activity[]>;
     updateAll(activity: Activity, where?: Where<Activity>): Promise<Count>;

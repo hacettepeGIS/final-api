@@ -19,6 +19,8 @@ import {
 import {Activity} from '../models';
 import {ActivityRepository} from '../repositories';
 import { GeoJSON } from 'leaflet'
+import { Geometry } from "geojson";
+import * as wkx from "wkx";
 
 export class ActivityController {
   constructor(
@@ -45,12 +47,23 @@ export class ActivityController {
     activity: GeoJSON,
   ): Promise<Activity> {
       return await this.activityRepository.create({
-        username:(<any>activity).properties.name,
+        ip:(<any>activity).properties.ip,
+        name:(<any>activity).properties.name,
         activityTypeId:(<any>activity).properties.activityTypeId,
         time:new Date().toString(),
-        location:activity,
+        geomerty:wkx.Geometry.parseGeoJSON((<any>activity).geometry).toWkt(),
         photo:undefined,
       });
+
+      
+      // to(geojson: Geometry) {
+      //   return wkx.Geometry.parseGeoJSON(geojson).toWkt();
+      // }
+    
+      // from(wkb: any) {
+      //   return wkx.Geometry.parse(new Buffer(wkb, "hex")).toGeoJSON();
+      // }
+
   }
 
   @get('/activities/count', {

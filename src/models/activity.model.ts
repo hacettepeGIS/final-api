@@ -1,5 +1,4 @@
 import {Entity, model, property} from '@loopback/repository';
-import { ActivityTypes } from './activity-types.model';
 
 @model({settings: {strict: false}})
 export class Activity extends Entity {
@@ -14,10 +13,15 @@ export class Activity extends Entity {
     type: 'string',
     required: true,
   })
-  username: string;
+  ip: string;
 
   @property({
-    type: ActivityTypes,
+    type: 'string',
+  })
+  name?: string;
+
+  @property({
+    type: 'number',
     required: true,
   })
   activityTypeId: number;
@@ -26,7 +30,7 @@ export class Activity extends Entity {
     type: 'object',
     required: true,
   })
-  location: object;
+  geomerty: Geometry;
 
   @property({
     type: 'date',

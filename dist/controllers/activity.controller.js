@@ -12,19 +12,16 @@ let ActivityController = class ActivityController {
         this.activityRepository = activityRepository;
     }
     async create(activity) {
-        //  var buffered = buffer(activity.feature, 2, {units: 'miles'});
-        // activity.properties.name=Value
-        // activity.properties.ip=this.ip
-        // activity.properties.activityTypeId=this.selectedActivity["id"]
-        return activity;
-        // await this.activityRepository.create({
-        //   username:(<any>activity).properties.name,
-        //   activityTypeId:(<any>activity).properties.activityTypeId,
-        //   time:new Date().toString(),
-        //   location:activity.
-        // });
-        JSON.stringify(activity);
-        //return this.activityRepository.create(activity);
+        // {"id":2,"username":"Evenning Walking","activityTypeId":{},"location":{"type":"Feature","properties":{"name":"Evenning Walking","ip":"94.54.17.134","activityTypeId":1},"geometry":{"type":"LineString","coordinates":[[32.889767,39.913249]]}},"time":"2020-06-09T18:44:18.000Z"}
+        //{"type":"Feature","properties":{"name":"Evenning Walking","ip":"94.54.17.134","activityTypeId":1},"geometry":{"type":"LineString","coordinates":[[32.889767,39.913249]]}}
+        return await this.activityRepository.create({
+            ip: activity.properties.ip,
+            name: activity.properties.name,
+            activityTypeId: activity.properties.activityTypeId,
+            time: new Date().toString(),
+            geomerty: activity.geometry,
+            photo: undefined,
+        });
     }
     async count(where) {
         return this.activityRepository.count(where);
