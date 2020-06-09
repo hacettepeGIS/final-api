@@ -18,7 +18,7 @@ import {
 } from '@loopback/rest';
 import {Activity} from '../models';
 import {ActivityRepository} from '../repositories';
-import { GeoJSON } from 'leaflet';
+import { GeoJSON } from 'leaflet'
 
 export class ActivityController {
   constructor(
@@ -45,7 +45,7 @@ export class ActivityController {
     activity: GeoJSON,
   ): Promise<boolean> {
 
-    return true;
+    return false;
     //return this.activityRepository.create(activity);
   }
 

@@ -1682,7 +1682,7 @@
         "affectsGlobalScope": false
       },
       "./src/application.ts": {
-        "version": "cf268d0e38d97e8a1ab986a196cfc9f4b2af7cd57d12e5085bf2e995884b6a37",
+        "version": "58539a604badd52146afcad06dcb42a17cdfb5b9868ef1a5ee9a39552f8a77b7",
         "signature": "3f63c6fe201c3529141c6a0e15be2478ca13a1a34c242e67e4d3b3365f8c4b77",
         "affectsGlobalScope": false
       },
@@ -1746,9 +1746,19 @@
         "signature": "59e76906beb6243f59bfa708cc6151e5635d86eebb844116c70b540d6c624ee3",
         "affectsGlobalScope": false
       },
+      "./node_modules/@types/geojson/index.d.ts": {
+        "version": "3a68b9e1129584f9e42f615b56926b0d2c1d22746e9c4689faf48d0e9749536a",
+        "signature": "3a68b9e1129584f9e42f615b56926b0d2c1d22746e9c4689faf48d0e9749536a",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/leaflet/index.d.ts": {
+        "version": "1b9dbc44fe37062f82ef00001ab41bb495fd889b29389de9882fc3bf82272d60",
+        "signature": "1b9dbc44fe37062f82ef00001ab41bb495fd889b29389de9882fc3bf82272d60",
+        "affectsGlobalScope": false
+      },
       "./src/controllers/activity.controller.ts": {
-        "version": "d837a81f3e236107f5eb2ddc33842d4d1a6413917145f356c537321f52dd455d",
-        "signature": "0adb4287d64abb4f16bb5c76f2cb5718c20c1f56f2139c2f3ce84c93989e9d27",
+        "version": "5985c888853237c2946456d540eea1886a9b72b47b9612e3eb49760a18db7be1",
+        "signature": "407849d39a82b05502d531516dabf5661e065c03795c800a46f9a33f55620b60",
         "affectsGlobalScope": false
       },
       "./src/controllers/index.ts": {
@@ -1776,11 +1786,6 @@
         "signature": "b4730e5cbeac402e543a0186f3c7521bd7c3c25c8fc7cf048103fc6487566654",
         "affectsGlobalScope": false
       },
-      "./node_modules/@types/geojson/index.d.ts": {
-        "version": "3a68b9e1129584f9e42f615b56926b0d2c1d22746e9c4689faf48d0e9749536a",
-        "signature": "3a68b9e1129584f9e42f615b56926b0d2c1d22746e9c4689faf48d0e9749536a",
-        "affectsGlobalScope": false
-      },
       "./node_modules/@types/minimatch/index.d.ts": {
         "version": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
         "signature": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
@@ -1789,11 +1794,6 @@
       "./node_modules/@types/glob/index.d.ts": {
         "version": "64ef5112114bdd77304acb548f93777b263bbf57272776139425a58f68a10775",
         "signature": "64ef5112114bdd77304acb548f93777b263bbf57272776139425a58f68a10775",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/@types/leaflet/index.d.ts": {
-        "version": "1b9dbc44fe37062f82ef00001ab41bb495fd889b29389de9882fc3bf82272d60",
-        "signature": "1b9dbc44fe37062f82ef00001ab41bb495fd889b29389de9882fc3bf82272d60",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/mocha/index.d.ts": {
@@ -4208,6 +4208,7 @@
       "./src/controllers/activity.controller.ts": [
         "./node_modules/@loopback/repository/dist/index.d.ts",
         "./node_modules/@loopback/rest/dist/index.d.ts",
+        "./node_modules/@types/leaflet/index.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./src/models/index.ts",
@@ -6631,6 +6632,7 @@
       ],
       "./src/controllers/activity.controller.ts": [
         "./node_modules/@loopback/repository/dist/index.d.ts",
+        "./node_modules/@types/leaflet/index.d.ts",
         "./src/models/index.ts",
         "./src/repositories/index.ts"
       ],

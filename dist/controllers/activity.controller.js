@@ -6,12 +6,14 @@ const repository_1 = require("@loopback/repository");
 const rest_1 = require("@loopback/rest");
 const models_1 = require("../models");
 const repositories_1 = require("../repositories");
+const leaflet_1 = require("leaflet");
 let ActivityController = class ActivityController {
     constructor(activityRepository) {
         this.activityRepository = activityRepository;
     }
     async create(activity) {
-        return this.activityRepository.create(activity);
+        return false;
+        //return this.activityRepository.create(activity);
     }
     async count(where) {
         return this.activityRepository.count(where);
@@ -40,22 +42,19 @@ tslib_1.__decorate([
         responses: {
             '200': {
                 description: 'Activity model instance',
-                content: { 'application/json': { schema: rest_1.getModelSchemaRef(models_1.Activity) } },
+                content: { 'application/json': { schema: rest_1.getModelSchemaRef(leaflet_1.GeoJSON) } },
             },
         },
     }),
     tslib_1.__param(0, rest_1.requestBody({
         content: {
             'application/json': {
-                schema: rest_1.getModelSchemaRef(models_1.Activity, {
-                    title: 'NewActivity',
-                    exclude: ['id'],
-                }),
+                schema: rest_1.getModelSchemaRef(leaflet_1.GeoJSON, { partial: true }),
             },
         },
     })),
     tslib_1.__metadata("design:type", Function),
-    tslib_1.__metadata("design:paramtypes", [Object]),
+    tslib_1.__metadata("design:paramtypes", [leaflet_1.GeoJSON]),
     tslib_1.__metadata("design:returntype", Promise)
 ], ActivityController.prototype, "create", null);
 tslib_1.__decorate([

@@ -18,7 +18,30 @@ export class GisApiApplication extends BootMixin(
   constructor(options: ApplicationConfig = {}) {
     super(options);
 
-    // Set up the custom sequence
+    if (typeof window === 'undefined') {
+      (<any>global).window = {
+        screen:{
+          deviceXDPI:{}
+        }
+      };
+      (<any>global).document  = {
+        documentElement: {
+          style: {}
+        },
+        getElementsByTagName: function() { return []; },
+        createElement: function() { return {}; }
+      };
+
+      (<any>global).navigator = {
+        userAgent: 'nodejs',
+        platform: {
+          indexOf:function(param:any){return 0}
+        }
+      };
+    }
+
+
+     // Set up the custom sequence
     this.sequence(MySequence);
 
     // Set up default home page

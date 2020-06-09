@@ -12,6 +12,26 @@ const sequence_1 = require("./sequence");
 class GisApiApplication extends boot_1.BootMixin(service_proxy_1.ServiceMixin(repository_1.RepositoryMixin(rest_1.RestApplication))) {
     constructor(options = {}) {
         super(options);
+        if (typeof window === 'undefined') {
+            global.window = {
+                screen: {
+                    deviceXDPI: {}
+                }
+            };
+            global.document = {
+                documentElement: {
+                    style: {}
+                },
+                getElementsByTagName: function () { return []; },
+                createElement: function () { return {}; }
+            };
+            global.navigator = {
+                userAgent: 'nodejs',
+                platform: {
+                    indexOf: function (param) { return 0; }
+                }
+            };
+        }
         // Set up the custom sequence
         this.sequence(sequence_1.MySequence);
         // Set up default home page

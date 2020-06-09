@@ -1,10 +1,11 @@
 import { Count, Filter, FilterExcludingWhere, Where } from '@loopback/repository';
 import { Activity } from '../models';
 import { ActivityRepository } from '../repositories';
+import { GeoJSON } from 'leaflet';
 export declare class ActivityController {
     activityRepository: ActivityRepository;
     constructor(activityRepository: ActivityRepository);
-    create(activity: Omit<Activity, 'id'>): Promise<Activity>;
+    create(activity: GeoJSON): Promise<boolean>;
     count(where?: Where<Activity>): Promise<Count>;
     find(filter?: Filter<Activity>): Promise<Activity[]>;
     updateAll(activity: Activity, where?: Where<Activity>): Promise<Count>;
