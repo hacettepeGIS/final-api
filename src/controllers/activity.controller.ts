@@ -18,6 +18,7 @@ import {
 } from '@loopback/rest';
 import {Activity} from '../models';
 import {ActivityRepository} from '../repositories';
+import { GeoJSON } from 'leaflet';
 
 export class ActivityController {
   constructor(
@@ -29,7 +30,7 @@ export class ActivityController {
     responses: {
       '200': {
         description: 'Activity model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Activity)}},
+        content: {'application/json': {schema: getModelSchemaRef(GeoJSON)}},
       },
     },
   })
@@ -37,16 +38,15 @@ export class ActivityController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Activity, {
-            title: 'NewActivity',
-            exclude: ['id'],
-          }),
+          schema: getModelSchemaRef(GeoJSON, {partial: true}),
         },
       },
     })
-    activity: Omit<Activity, 'id'>,
-  ): Promise<Activity> {
-    return this.activityRepository.create(activity);
+    activity: GeoJSON,
+  ): Promise<boolean> {
+
+    return true;
+    //return this.activityRepository.create(activity);
   }
 
   @get('/activities/count', {

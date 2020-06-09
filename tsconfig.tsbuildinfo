@@ -1776,6 +1776,11 @@
         "signature": "b4730e5cbeac402e543a0186f3c7521bd7c3c25c8fc7cf048103fc6487566654",
         "affectsGlobalScope": false
       },
+      "./node_modules/@types/geojson/index.d.ts": {
+        "version": "3a68b9e1129584f9e42f615b56926b0d2c1d22746e9c4689faf48d0e9749536a",
+        "signature": "3a68b9e1129584f9e42f615b56926b0d2c1d22746e9c4689faf48d0e9749536a",
+        "affectsGlobalScope": false
+      },
       "./node_modules/@types/minimatch/index.d.ts": {
         "version": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
         "signature": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
@@ -1784,6 +1789,11 @@
       "./node_modules/@types/glob/index.d.ts": {
         "version": "64ef5112114bdd77304acb548f93777b263bbf57272776139425a58f68a10775",
         "signature": "64ef5112114bdd77304acb548f93777b263bbf57272776139425a58f68a10775",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/leaflet/index.d.ts": {
+        "version": "1b9dbc44fe37062f82ef00001ab41bb495fd889b29389de9882fc3bf82272d60",
+        "signature": "1b9dbc44fe37062f82ef00001ab41bb495fd889b29389de9882fc3bf82272d60",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/mocha/index.d.ts": {
@@ -3496,6 +3506,10 @@
         "./node_modules/@types/node/ts3.7/index.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
+      "./node_modules/@types/geojson/index.d.ts": [
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
       "./node_modules/@types/glob/index.d.ts": [
         "./node_modules/@types/minimatch/index.d.ts",
         "./node_modules/@types/node/events.d.ts",
@@ -3508,6 +3522,11 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "./node_modules/@types/json-schema/index.d.ts": [
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/leaflet/index.d.ts": [
+        "./node_modules/@types/geojson/index.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
@@ -5919,6 +5938,10 @@
         "./node_modules/@types/node/ts3.7/index.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
+      "./node_modules/@types/geojson/index.d.ts": [
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
       "./node_modules/@types/glob/index.d.ts": [
         "./node_modules/@types/minimatch/index.d.ts",
         "./node_modules/@types/node/events.d.ts",
@@ -5931,6 +5954,11 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "./node_modules/@types/json-schema/index.d.ts": [
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/leaflet/index.d.ts": [
+        "./node_modules/@types/geojson/index.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
@@ -6872,9 +6900,11 @@
       "./node_modules/@types/express-serve-static-core/index.d.ts",
       "./node_modules/@types/express/index.d.ts",
       "./node_modules/@types/fs-extra/index.d.ts",
+      "./node_modules/@types/geojson/index.d.ts",
       "./node_modules/@types/glob/index.d.ts",
       "./node_modules/@types/http-errors/index.d.ts",
       "./node_modules/@types/json-schema/index.d.ts",
+      "./node_modules/@types/leaflet/index.d.ts",
       "./node_modules/@types/mime/index.d.ts",
       "./node_modules/@types/minimatch/index.d.ts",
       "./node_modules/@types/mocha/index.d.ts",
