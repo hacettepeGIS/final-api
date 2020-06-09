@@ -1,18 +1,12 @@
 "use strict";
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Activity = void 0;
 const tslib_1 = require("tslib");
 const repository_1 = require("@loopback/repository");
-const wkx = tslib_1.__importStar(require("wkx"));
 let Activity = class Activity extends repository_1.Entity {
     constructor(data) {
         super(data);
-    }
-    to(geojson) {
-        return wkx.Geometry.parseGeoJSON(geojson).toWkt();
-    }
-    from(wkb) {
-        return wkx.Geometry.parse(new Buffer(wkb, "hex")).toGeoJSON();
     }
 };
 tslib_1.__decorate([
@@ -48,7 +42,7 @@ tslib_1.__decorate([
         type: 'object',
         required: true,
     }),
-    tslib_1.__metadata("design:type", Object)
+    tslib_1.__metadata("design:type", typeof (_a = typeof Geometry !== "undefined" && Geometry) === "function" ? _a : Object)
 ], Activity.prototype, "geomerty", void 0);
 tslib_1.__decorate([
     repository_1.property({

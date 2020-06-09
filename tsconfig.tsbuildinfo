@@ -1706,19 +1706,9 @@
         "signature": "2b6a697a827febfb60ddd301896b8c90bc7a5d3ac19da0e70e14d7c32df82175",
         "affectsGlobalScope": false
       },
-      "./node_modules/@types/geojson/index.d.ts": {
-        "version": "3a68b9e1129584f9e42f615b56926b0d2c1d22746e9c4689faf48d0e9749536a",
-        "signature": "3a68b9e1129584f9e42f615b56926b0d2c1d22746e9c4689faf48d0e9749536a",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/wkx/lib/wkx.d.ts": {
-        "version": "cbf61856de91bea0b78ab7b90fbba2daca609874a0ef1df7d4e488c18a0e6e43",
-        "signature": "cbf61856de91bea0b78ab7b90fbba2daca609874a0ef1df7d4e488c18a0e6e43",
-        "affectsGlobalScope": false
-      },
       "./src/models/activity.model.ts": {
-        "version": "3d8d13f996f555d18c9640d6381caf72bd9c49be940c70fd6e6eb48cf4cab666",
-        "signature": "d25427f5f6a46ae897cdf749aa5cf5ba978c7501f3525e5173f942db0525dcc9",
+        "version": "e9fa73f76e1c4d5a72362d404b39527850080255148c624885cd98daa529052f",
+        "signature": "895663344d87b9339279bd76d6a9971eee69c43398c581ae4619d1f778125d69",
         "affectsGlobalScope": false
       },
       "./src/models/index.ts": {
@@ -1756,13 +1746,23 @@
         "signature": "59e76906beb6243f59bfa708cc6151e5635d86eebb844116c70b540d6c624ee3",
         "affectsGlobalScope": false
       },
+      "./node_modules/@types/geojson/index.d.ts": {
+        "version": "3a68b9e1129584f9e42f615b56926b0d2c1d22746e9c4689faf48d0e9749536a",
+        "signature": "3a68b9e1129584f9e42f615b56926b0d2c1d22746e9c4689faf48d0e9749536a",
+        "affectsGlobalScope": false
+      },
       "./node_modules/@types/leaflet/index.d.ts": {
         "version": "1b9dbc44fe37062f82ef00001ab41bb495fd889b29389de9882fc3bf82272d60",
         "signature": "1b9dbc44fe37062f82ef00001ab41bb495fd889b29389de9882fc3bf82272d60",
         "affectsGlobalScope": false
       },
+      "./node_modules/wkx/lib/wkx.d.ts": {
+        "version": "cbf61856de91bea0b78ab7b90fbba2daca609874a0ef1df7d4e488c18a0e6e43",
+        "signature": "cbf61856de91bea0b78ab7b90fbba2daca609874a0ef1df7d4e488c18a0e6e43",
+        "affectsGlobalScope": false
+      },
       "./src/controllers/activity.controller.ts": {
-        "version": "ddab2a8d7266de220971258b83461eaa4876d51f10a42ef75a5aa9e4163b8282",
+        "version": "863d2dc515c2902a5cb85d921e17d0e9dea7ebee093a73ce3245406b071cad40",
         "signature": "83f43895ab081772080eb7050a1129375f233322f885b94b4b9c0079c318031b",
         "affectsGlobalScope": false
       },
@@ -4218,9 +4218,11 @@
       "./src/controllers/activity.controller.ts": [
         "./node_modules/@loopback/repository/dist/index.d.ts",
         "./node_modules/@loopback/rest/dist/index.d.ts",
+        "./node_modules/@types/geojson/index.d.ts",
         "./node_modules/@types/leaflet/index.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
+        "./node_modules/wkx/lib/wkx.d.ts",
         "./src/models/index.ts",
         "./src/repositories/index.ts"
       ],
@@ -4258,10 +4260,8 @@
       ],
       "./src/models/activity.model.ts": [
         "./node_modules/@loopback/repository/dist/index.d.ts",
-        "./node_modules/@types/geojson/index.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/wkx/lib/wkx.d.ts"
+        "./node_modules/@types/node/util.d.ts"
       ],
       "./src/models/index.ts": [
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -6670,8 +6670,7 @@
         "./node_modules/@loopback/repository/dist/index.d.ts"
       ],
       "./src/models/activity.model.ts": [
-        "./node_modules/@loopback/repository/dist/index.d.ts",
-        "./node_modules/@types/geojson/index.d.ts"
+        "./node_modules/@loopback/repository/dist/index.d.ts"
       ],
       "./src/models/index.ts": [
         "./src/models/activity-types.model.ts",
@@ -7057,7 +7056,19 @@
       "./src/index.ts",
       "./src/migrate.ts",
       "./src/models/activity-types.model.ts",
-      "./src/models/activity.model.ts",
+      [
+        "./src/models/activity.model.ts",
+        [
+          {
+            "file": "./src/models/activity.model.ts",
+            "start": 516,
+            "length": 8,
+            "messageText": "Cannot find name 'Geometry'.",
+            "category": 1,
+            "code": 2304
+          }
+        ]
+      ],
       "./src/models/index.ts",
       "./src/openapi-spec.ts",
       "./src/repositories/activity-types.repository.ts",

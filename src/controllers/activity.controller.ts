@@ -19,7 +19,6 @@ import {
 import {Activity} from '../models';
 import {ActivityRepository} from '../repositories';
 import { GeoJSON } from 'leaflet'
-import { Geometry } from "geojson";
 import * as wkx from "wkx";
 
 export class ActivityController {

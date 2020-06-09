@@ -1,4 +1,5 @@
 import {Entity, model, property} from '@loopback/repository';
+import { Geometry } from "geojson";
 
 @model({settings: {strict: false}})
 export class Activity extends Entity {

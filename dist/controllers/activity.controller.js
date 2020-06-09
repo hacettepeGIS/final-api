@@ -7,21 +7,26 @@ const rest_1 = require("@loopback/rest");
 const models_1 = require("../models");
 const repositories_1 = require("../repositories");
 const leaflet_1 = require("leaflet");
+const wkx = tslib_1.__importStar(require("wkx"));
 let ActivityController = class ActivityController {
     constructor(activityRepository) {
         this.activityRepository = activityRepository;
     }
     async create(activity) {
-        // {"id":2,"username":"Evenning Walking","activityTypeId":{},"location":{"type":"Feature","properties":{"name":"Evenning Walking","ip":"94.54.17.134","activityTypeId":1},"geometry":{"type":"LineString","coordinates":[[32.889767,39.913249]]}},"time":"2020-06-09T18:44:18.000Z"}
-        //{"type":"Feature","properties":{"name":"Evenning Walking","ip":"94.54.17.134","activityTypeId":1},"geometry":{"type":"LineString","coordinates":[[32.889767,39.913249]]}}
         return await this.activityRepository.create({
             ip: activity.properties.ip,
             name: activity.properties.name,
             activityTypeId: activity.properties.activityTypeId,
             time: new Date().toString(),
-            geomerty: activity.geometry,
+            geomerty: wkx.Geometry.parseGeoJSON(activity.geometry).toWkt(),
             photo: undefined,
         });
+        // to(geojson: Geometry) {
+        //   return wkx.Geometry.parseGeoJSON(geojson).toWkt();
+        // }
+        // from(wkb: any) {
+        //   return wkx.Geometry.parse(new Buffer(wkb, "hex")).toGeoJSON();
+        // }
     }
     async count(where) {
         return this.activityRepository.count(where);
