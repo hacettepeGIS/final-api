@@ -1,3 +1,5 @@
+dist
+
 !node_modules/
 
 node_modules/*
@@ -5,3 +7,4 @@ node_modules/*
 
 node_modules/@loopback/*
 !node_modules/@loopback/repository-json-schema/
+

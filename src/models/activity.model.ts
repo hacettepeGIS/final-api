@@ -1,5 +1,4 @@
 import {Entity, model, property} from '@loopback/repository';
-import { Geometry } from "geojson";
 
 @model({settings: {strict: false}})
 export class Activity extends Entity {
@@ -28,10 +27,10 @@ export class Activity extends Entity {
   activityTypeId: number;
 
   @property({
-    type: 'object',
+    type: 'string',
     required: true,
   })
-  geomerty: Geometry;
+  geomerty: string;
 
   @property({
     type: 'date',
