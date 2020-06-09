@@ -30,7 +30,7 @@ export class Activity extends Entity {
     type: 'string',
     required: true,
   })
-  geomerty: string;
+  geometry: string;
 
   @property({
     type: 'date',

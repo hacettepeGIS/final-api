@@ -50,7 +50,7 @@ export class ActivityController {
         name:(<any>activity).properties.name,
         activityTypeId:(<any>activity).properties.activityTypeId,
         time:new Date().toString(),
-        geomerty:wkx.Geometry.parseGeoJSON((<any>activity).geometry).toWkt(),
+        geometry:wkx.Geometry.parseGeoJSON((<any>activity).geometry).toWkt(),
         photo:undefined,
       });
 
