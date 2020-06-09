@@ -43,9 +43,9 @@ export class ActivityController {
       },
     })
     activity: GeoJSON,
-  ): Promise<boolean> {
+  ): Promise<string> {
 
-    return false;
+    return JSON.stringify(activity);
     //return this.activityRepository.create(activity);
   }
 
