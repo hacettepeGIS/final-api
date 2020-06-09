@@ -48,7 +48,7 @@ export class ActivityController {
         username:(<any>activity).properties.name,
         activityTypeId:(<any>activity).properties.activityTypeId,
         time:new Date().toString(),
-        location:activity.toGeoJSON(),
+        location:activity,
         photo:undefined,
       });
   }
