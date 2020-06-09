@@ -19,7 +19,6 @@ import {
 import {Activity} from '../models';
 import {ActivityRepository} from '../repositories';
 import { GeoJSON } from 'leaflet'
-import { request } from 'express';
 
 export class ActivityController {
   constructor(
@@ -44,23 +43,14 @@ export class ActivityController {
       },
     })
     activity: GeoJSON,
-  ): Promise<GeoJSON> {
-    // activity.properties.name=Value
-    // activity.properties.ip=this.ip
-    // activity.properties.activityTypeId=this.selectedActivity["id"]
-      return activity;
-      // await this.activityRepository.create({
-      //   username:(<any>activity).properties.name,
-      //   activityTypeId:(<any>activity).properties.activityTypeId,
-      //   time:new Date().toString(),
-      //   location:activity.
-
-
-      // });
-    
-
-     JSON.stringify(activity);
-    //return this.activityRepository.create(activity);
+  ): Promise<Activity> {
+      return await this.activityRepository.create({
+        username:(<any>activity).properties.name,
+        activityTypeId:(<any>activity).properties.activityTypeId,
+        time:new Date().toString(),
+        location:activity.toGeoJSON(),
+        photo:undefined,
+      });
   }
 
   @get('/activities/count', {

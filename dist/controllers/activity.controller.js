@@ -12,7 +12,18 @@ let ActivityController = class ActivityController {
         this.activityRepository = activityRepository;
     }
     async create(activity) {
-        return false;
+        //  var buffered = buffer(activity.feature, 2, {units: 'miles'});
+        // activity.properties.name=Value
+        // activity.properties.ip=this.ip
+        // activity.properties.activityTypeId=this.selectedActivity["id"]
+        return activity;
+        // await this.activityRepository.create({
+        //   username:(<any>activity).properties.name,
+        //   activityTypeId:(<any>activity).properties.activityTypeId,
+        //   time:new Date().toString(),
+        //   location:activity.
+        // });
+        JSON.stringify(activity);
         //return this.activityRepository.create(activity);
     }
     async count(where) {

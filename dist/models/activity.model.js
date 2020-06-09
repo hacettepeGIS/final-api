@@ -33,10 +33,10 @@ tslib_1.__decorate([
 ], Activity.prototype, "activityTypeId", void 0);
 tslib_1.__decorate([
     repository_1.property({
-        type: 'geopoint',
+        type: 'jsonb',
         required: true,
     }),
-    tslib_1.__metadata("design:type", String)
+    tslib_1.__metadata("design:type", Object)
 ], Activity.prototype, "location", void 0);
 tslib_1.__decorate([
     repository_1.property({

@@ -23,10 +23,10 @@ export class Activity extends Entity {
   activityTypeId: number;
 
   @property({
-    type: 'geopoint',
+    type: 'object',
     required: true,
   })
-  location: string;
+  location: object;
 
   @property({
     type: 'date',

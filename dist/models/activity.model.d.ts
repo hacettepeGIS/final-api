@@ -4,7 +4,7 @@ export declare class Activity extends Entity {
     id?: number;
     username: string;
     activityTypeId: number;
-    location: string;
+    location: object;
     time: string;
     photo?: Buffer;
     [prop: string]: any;
