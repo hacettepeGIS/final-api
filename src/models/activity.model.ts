@@ -27,10 +27,10 @@ export class Activity extends Entity {
   activityTypeId: number;
 
   @property({
-    type: 'string',
+    type: 'buffer',
     required: true,
   })
-  geometry: string;
+  geometry: Buffer;
 
   @property({
     type: 'date',
