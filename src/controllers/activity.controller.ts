@@ -19,6 +19,7 @@ import {
 import {Activity} from '../models';
 import {ActivityRepository} from '../repositories';
 import { GeoJSON } from 'leaflet'
+import { Geometry } from "geojson";
 import * as wkx from "wkx";
 
 export class ActivityController {
@@ -50,7 +51,8 @@ export class ActivityController {
         name:(<any>activity).properties.name,
         activityTypeId:(<any>activity).properties.activityTypeId,
         time:new Date().toString(),
-        geometry:wkx.Geometry.parseGeoJSON((<any>activity).geometry).toTwkb(),
+        geometry:wkx.Geometry.parseGeoJSON((<any>activity).geometry).toWkt(),
+        // ST_GeomFromText(geometry)
         photo:undefined,
       });
 
@@ -63,63 +65,6 @@ export class ActivityController {
       //   return wkx.Geometry.parse(new Buffer(wkb, "hex")).toGeoJSON();
       // }
 
-  }
-
-  @get('/activities/count', {
-    responses: {
-      '200': {
-        description: 'Activity model count',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
-  })
-  async count(
-    @param.where(Activity) where?: Where<Activity>,
-  ): Promise<Count> {
-    return this.activityRepository.count(where);
-  }
-
-  @get('/activities', {
-    responses: {
-      '200': {
-        description: 'Array of Activity model instances',
-        content: {
-          'application/json': {
-            schema: {
-              type: 'array',
-              items: getModelSchemaRef(Activity, {includeRelations: true}),
-            },
-          },
-        },
-      },
-    },
-  })
-  async find(
-    @param.filter(Activity) filter?: Filter<Activity>,
-  ): Promise<Activity[]> {
-    return this.activityRepository.find(filter);
-  }
-
-  @patch('/activities', {
-    responses: {
-      '200': {
-        description: 'Activity PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
-  })
-  async updateAll(
-    @requestBody({
-      content: {
-        'application/json': {
-          schema: getModelSchemaRef(Activity, {partial: true}),
-        },
-      },
-    })
-    activity: Activity,
-    @param.where(Activity) where?: Where<Activity>,
-  ): Promise<Count> {
-    return this.activityRepository.updateAll(activity, where);
   }
 
   @get('/activities/{id}', {
@@ -141,49 +86,24 @@ export class ActivityController {
     return this.activityRepository.findById(id, filter);
   }
 
-  @patch('/activities/{id}', {
+  @get('/activities', {
     responses: {
-      '204': {
-        description: 'Activity PATCH success',
-      },
-    },
-  })
-  async updateById(
-    @param.path.number('id') id: number,
-    @requestBody({
-      content: {
-        'application/json': {
-          schema: getModelSchemaRef(Activity, {partial: true}),
+      '200': {
+        description: 'Array of Activity model instances',
+        content: {
+          'application/json': {
+            schema: {
+              type: 'array',
+              items: getModelSchemaRef(Activity, {includeRelations: true}),
+            },
+          },
         },
       },
-    })
-    activity: Activity,
-  ): Promise<void> {
-    await this.activityRepository.updateById(id, activity);
-  }
-
-  @put('/activities/{id}', {
-    responses: {
-      '204': {
-        description: 'Activity PUT success',
-      },
     },
   })
-  async replaceById(
-    @param.path.number('id') id: number,
-    @requestBody() activity: Activity,
-  ): Promise<void> {
-    await this.activityRepository.replaceById(id, activity);
-  }
-
-  @del('/activities/{id}', {
-    responses: {
-      '204': {
-        description: 'Activity DELETE success',
-      },
-    },
-  })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
-    await this.activityRepository.deleteById(id);
+  async find(
+    @param.filter(Activity) filter?: Filter<Activity>,
+  ): Promise<Activity[]> {
+    return this.activityRepository.find(filter);
   }
 }

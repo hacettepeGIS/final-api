@@ -1,6 +1,6 @@
 import {Entity, model, property} from '@loopback/repository';
 
-@model({settings: {strict: false}})
+@model({settings: {strict: true}})
 export class Activity extends Entity {
   @property({
     type: 'number',
@@ -27,10 +27,10 @@ export class Activity extends Entity {
   activityTypeId: number;
 
   @property({
-    type: 'buffer',
+    type: 'string',
     required: true,
   })
-  geometry: Buffer;
+  geometry: string;
 
   @property({
     type: 'date',
