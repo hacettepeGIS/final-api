@@ -27,6 +27,12 @@ export class Activity extends Entity {
   activityTypeId: number;
 
   @property({
+    type: 'number',
+    required: true,
+  })
+  duration: number;
+
+  @property({
     type: 'string',
     required: true,
   })

@@ -1,25 +1,18 @@
 import {
-  Count,
-  CountSchema,
   Filter,
   FilterExcludingWhere,
-  repository,
-  Where,
+  repository
 } from '@loopback/repository';
 import {
   post,
   param,
   get,
   getModelSchemaRef,
-  patch,
-  put,
-  del,
   requestBody,
 } from '@loopback/rest';
 import {Activity} from '../models';
 import {ActivityRepository} from '../repositories';
 import { GeoJSON } from 'leaflet'
-import { Geometry } from "geojson";
 import * as wkx from "wkx";
 
 export class ActivityController {
@@ -54,17 +47,14 @@ export class ActivityController {
         geometry:wkx.Geometry.parseGeoJSON((<any>activity).geometry).toWkt(),
         // ST_GeomFromText(geometry)
         photo:undefined,
-      });
-
-      
+        duration:(<any>activity).properties.duration
+      });    
       // to(geojson: Geometry) {
       //   return wkx.Geometry.parseGeoJSON(geojson).toWkt();
-      // }
-    
+      // } 
       // from(wkb: any) {
       //   return wkx.Geometry.parse(new Buffer(wkb, "hex")).toGeoJSON();
       // }
-
   }
 
   @get('/activities/{id}', {
