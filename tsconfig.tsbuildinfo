@@ -1707,8 +1707,8 @@
         "affectsGlobalScope": false
       },
       "./src/models/activity.model.ts": {
-        "version": "fb79657a6c14888de7921f835a4be94e0398c2d7f480909674d655bf9cd5e04d",
-        "signature": "e4580337a960f300f9f63c5683a662740a8e8ddcd5647f8735a62b5cfea3ea7d",
+        "version": "f13d320f4911bf5e73181d368b3bac6f54db31fcdd1130f7d7d4c1da4a6641e6",
+        "signature": "8f300b987104a277d900f2fbb9501a98290e5a62116619d00a9cb71321e238f6",
         "affectsGlobalScope": false
       },
       "./src/models/index.ts": {

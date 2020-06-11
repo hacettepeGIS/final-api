@@ -45,10 +45,10 @@ tslib_1.__decorate([
 ], Activity.prototype, "duration", void 0);
 tslib_1.__decorate([
     repository_1.property({
-        type: 'number',
+        type: 'string',
         required: true,
     }),
-    tslib_1.__metadata("design:type", Number)
+    tslib_1.__metadata("design:type", String)
 ], Activity.prototype, "distance", void 0);
 tslib_1.__decorate([
     repository_1.property({

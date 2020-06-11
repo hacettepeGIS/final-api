@@ -33,10 +33,10 @@ export class Activity extends Entity {
   duration: number;
 
   @property({
-    type: 'number',
+    type: 'string',
     required: true,
   })
-  distance: number;
+  distance: string;
 
   @property({
     type: 'string',
