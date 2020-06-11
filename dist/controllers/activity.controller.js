@@ -21,7 +21,8 @@ let ActivityController = class ActivityController {
             geometry: wkx.Geometry.parseGeoJSON(activity.geometry).toWkt(),
             // ST_GeomFromText(geometry)
             photo: undefined,
-            duration: activity.properties.duration
+            duration: activity.properties.duration,
+            distance: activity.properties.distance
         });
         // to(geojson: Geometry) {
         //   return wkx.Geometry.parseGeoJSON(geojson).toWkt();

@@ -33,6 +33,12 @@ export class Activity extends Entity {
   duration: number;
 
   @property({
+    type: 'number',
+    required: true,
+  })
+  distance: number;
+
+  @property({
     type: 'string',
     required: true,
   })

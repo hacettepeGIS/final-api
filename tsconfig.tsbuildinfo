@@ -1687,7 +1687,7 @@
         "affectsGlobalScope": false
       },
       "./src/index.ts": {
-        "version": "bb72a0fa303e99e53d201055335151fa69f5a5ae81b9692a533ae58b108e610c",
+        "version": "b8e1267c7ddd7d401956edb5c2e8391056d94f2ff5e0d7952974fe6131871e8a",
         "signature": "6736014c6b1e811e1b33d70194f8a97545de232bd8a48ff40c49dbe6fb2d425c",
         "affectsGlobalScope": false
       },
@@ -1707,8 +1707,8 @@
         "affectsGlobalScope": false
       },
       "./src/models/activity.model.ts": {
-        "version": "6a48e3d8e99106ff0b2ede57de501f1ec2514e6bdf0b41afc4479b6368d760af",
-        "signature": "c78f76778269703a159d3ef7e01475be814712ad0d07c9bff0180c50455ec8f2",
+        "version": "fb79657a6c14888de7921f835a4be94e0398c2d7f480909674d655bf9cd5e04d",
+        "signature": "e4580337a960f300f9f63c5683a662740a8e8ddcd5647f8735a62b5cfea3ea7d",
         "affectsGlobalScope": false
       },
       "./src/models/index.ts": {
@@ -1762,7 +1762,7 @@
         "affectsGlobalScope": false
       },
       "./src/controllers/activity.controller.ts": {
-        "version": "dd5434f9abbf6ca993989c7925d4a4b3a066f59440106f4a2f6d6f52bbe9afde",
+        "version": "92b8a9c0cffa7f2e2b775283ec3be0084c13ff9b17ff3ca4fde25a7532c37a45",
         "signature": "e8b0e6f8d6134b5e37d0be839afc3561740f8010a8d61b8c794d182c67f3b603",
         "affectsGlobalScope": false
       },

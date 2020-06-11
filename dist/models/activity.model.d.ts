@@ -6,6 +6,7 @@ export declare class Activity extends Entity {
     name?: string;
     activityTypeId: number;
     duration: number;
+    distance: number;
     geometry: string;
     time: string;
     photo?: Buffer;

@@ -47,7 +47,8 @@ export class ActivityController {
         geometry:wkx.Geometry.parseGeoJSON((<any>activity).geometry).toWkt(),
         // ST_GeomFromText(geometry)
         photo:undefined,
-        duration:(<any>activity).properties.duration
+        duration:(<any>activity).properties.duration,
+        distance:(<any>activity).properties.distance
       });    
       // to(geojson: Geometry) {
       //   return wkx.Geometry.parseGeoJSON(geojson).toWkt();
